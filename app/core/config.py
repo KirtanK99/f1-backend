@@ -1,8 +1,12 @@
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    env: str = "dev"
-    database_url: str = "postgresql+psycopg://f1:f1@localhost:5432/f1"
+    env: str
+    database_url: str
+    ergast_url: str
+    season: str
+    fastf1_cache_dir: str | None = None
+    pythonunbuffered: int | None = None
 
     class Config:
         env_file = ".env"

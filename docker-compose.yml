@@ -1,14 +1,12 @@
-version: "3.9"
 services:
   api:
     build: .
-    ports:
-      - "8000:8000"
+    network_mode: host
     env_file:
       - .env
     volumes:
-      - .:/app   # Mount the entire project into /app
-      - fastf1cache:/tmp/fastf1cache  # Persist FastF1 cache
+      - .:/app
+      - fastf1cache:/tmp/fastf1cache
     working_dir: /app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     depends_on:
