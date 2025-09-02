@@ -10,6 +10,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 
+.fastf1_cache/
 # Editors/OS
 .vscode/
 .idea/
@@ -19,4 +20,10 @@ __pycache__/
 *.pid
 # local volumes (if any)
 pgdata/
-EOF
+
+# ML artifacts
+models/
+*.joblib
+
+# Jupyter notebooks (if you experiment later)
+.ipynb_checkpoints/
